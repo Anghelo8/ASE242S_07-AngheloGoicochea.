@@ -2,7 +2,7 @@
 <br>
 
 Nombre: Anghelo Goicochea
-Curso: Analisis de Sistemas
+Curso: Programacion Front-End
 <br>
 
 Instrucciones para iniciar
