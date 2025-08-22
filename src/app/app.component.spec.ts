@@ -1,29 +1,37 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
-  });
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'presentacion';
+  
+  nombre = 'Juan Pérez';
+  carrera = 'Ingeniería en Sistemas';
+  correo = 'juan.perez@email.com';
+  edad = 24;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+  profileImage = 'https://randomuser.me/api/portraits/men/75.jpg';
 
-  it(`should have the 'presentacion' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('presentacion');
-  });
+  hobbies = 'Leer, programar, jugar fútbol';
+  frase = 'El único límite es tu mente.';
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, presentacion');
-  });
-});
+  mostrarExtra = false;
+
+  backgroundColor = '#f5f5f5';
+
+  colores = ['#f5f5f5', '#e0f7fa', '#ffe0b2', '#fce4ec'];
+  colorIndex = 0;
+
+  skills = ['HTML', 'CSS', 'JavaScript', 'Angular', 'Git'];
+
+  cambiarColorFondo() {
+    this.colorIndex = (this.colorIndex + 1) % this.colores.length;
+    this.backgroundColor = this.colores[this.colorIndex];
+  }
+}
